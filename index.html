@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turf N Surf Po Boy — Austin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-red:#e63946;
+      --brand-teal:#285f67;
+      --overlay: .55;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:#fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:grid;
+      place-items:center;
+      background:#000;
+    }
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background-position:center center;
+      background-repeat:no-repeat;
+      background-size:cover;
+      filter:saturate(1.25) contrast(1.05);
+    }
+    .bg{ 
+      background-image: image-set(
+        url('assets/img/full-blackened-tuna.webp') type('image/webp') 1x,
+        url('assets/img/full-blackened-tuna.jpg') type('image/jpeg') 1x
+      );
+    }
+    .bg::before{
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,var(--overlay)); z-index:1;
+    }
+    .wrap{ 
+      text-align:center; padding:24px; width:min(960px, 92vw);
+    }
+    .logo img{ width:min(420px, 82vw); height:auto; margin-bottom:36px; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); }
+    .cta{
+      display:flex; flex-direction:column; gap:16px; justify-content:center; align-items:center; margin-bottom:24px;
+    }
+    .cta a{
+      font-family:'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      text-decoration:none; font-weight:700;
+      font-size: clamp(32px, 7vw, 52px);
+      color:#fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,.6);
+      transition: color .2s ease;
+    }
+    .cta a:hover{ color: var(--brand-red); }
+    .meta{ margin-top:16px; font-size:clamp(14px, 2.6vw, 18px); text-shadow:0 1px 3px rgba(0,0,0,.6); }
+    .meta a{ color:#fff; text-underline-offset:3px; }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <div class="logo">
+      <picture>
+        <source srcset="assets/img/tns-logo.webp" type="image/webp">
+        <img src="assets/img/tns-logo.png" alt="Turf N Surf Po Boy" width="500" height="164" loading="eager">
+      </picture>
+    </div>
+
+    <nav class="cta" aria-label="primary">
+      <a href="#menu">Menu</a>
+      <a href="https://www.clover.com/online-ordering/turf-n-surf-po-boylavaca-austin" target="_blank" rel="noopener">Order Online</a>
+    </nav>
+
+    <p class="meta">
+      <a href="https://maps.app.goo.gl/npUMvHDrD2yMsLWm8" rel="noopener" target="_blank">407 Lavaca St, Austin, TX 78704</a>
+    </p>
+  </main>
+</body>
+</html>
