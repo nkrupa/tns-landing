@@ -1,0 +1,7 @@
+# Cache HTML lightly (so you can change copy without long delays)
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
+
+# Cache all assets hard with immutable (bump filenames to invalidate)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
