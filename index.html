@@ -9,98 +9,75 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --brand-red:#e63946;
-      --brand-teal:#285f67;
-      --overlay: .55;
+      --brand-red:#d85a4b;       /* tuned to mockup red */
+      --brand-blue:#2a6a7a;      /* tuned to mockup blue/teal */
+      --overlay:.10;             /* very light overlay to pop type on bg */
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      color:#fff;
+      color:#1e1e1e;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      display:grid;
-      place-items:center;
-      background:#000;
+      display:grid; place-items:center; background:#000;
     }
-    .bg{
-      position:fixed; inset:0; z-index:-2;
-      background-position:center center;
-      background-repeat:no-repeat;
-      background-size:cover;
-      filter:saturate(1.25) contrast(1.05);
+    /* Background wood illustration */
+    .bg{position:fixed; inset:0; z-index:-2; background-position:center; background-size:cover; background-repeat:no-repeat;}
+    .bg{background-image:url('assets/img/tns-background.jpeg');
+        background-image:image-set(
+          url('assets/img/tns-background.webp') type('image/webp') 1x,
+          url('assets/img/tns-background.jpeg') type('image/jpeg') 1x);
     }
-    .bg{ 
-      background-image: image-set(
-        url('assets/img/full-blackened-tuna.webp') type('image/webp') 1x,
-        url('assets/img/full-blackened-tuna.jpg') type('image/jpeg') 1x
-      );
-    }
-    .bg::before{
-      content:""; position:absolute; inset:0; background:rgba(0,0,0,var(--overlay)); z-index:1;
-    }
-    .wrap{ 
-      text-align:center; padding:24px; width:min(960px, 92vw);
-    }
-    .logo img{ width:min(420px, 82vw); height:auto; margin-bottom:36px; filter: drop-shadow(0 10px 18px rgba(0,0,0,.35)); }
-    .cta{
-      display:flex; flex-direction:column; gap:16px; justify-content:center; align-items:center; margin-bottom:24px;
-    }
-    .cta a{
-      font-family:'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      text-decoration:none; font-weight:700;
-      font-size: clamp(32px, 7vw, 52px);
-      color:#fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,.6);
-      transition: color .2s ease;
-      text-transform: uppercase;
-    }
-    .cta a:hover{ color: var(--brand-red); }
-    .meta{ margin-top:16px; font-size:clamp(14px, 2.6vw, 18px); text-shadow:0 1px 3px rgba(0,0,0,.6); }
-    .meta a{ color:#fff; text-underline-offset:3px; }
+    .bg::before{content:""; position:absolute; inset:0; background:rgba(255,255,255,var(--overlay));}
+
+    .wrap{ text-align:center; width:min(1100px, 92vw); padding: clamp(16px, 4vw, 36px); }
+
+    /* CTAs at top like mockup */
+    .cta{ display:flex; gap: clamp(18px, 5vw, 44px); justify-content:center; align-items:center; margin: clamp(8px, 2vw, 16px) auto 24px; flex-wrap:wrap; }
+    .cta a{ font-family:'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-weight:800; text-decoration:none; text-transform:uppercase; letter-spacing:.6px; font-size: clamp(22px, 4.6vw, 36px); text-shadow: 0 2px 8px rgba(0,0,0,.22); }
+    .cta a.menu{ color: var(--brand-red); }
+    .cta a.order{ color: var(--brand-blue); }
+    .cta a:hover{ filter:brightness(1.1); }
+
+    /* Logo centered */
+    .logo{ margin: clamp(10px, 3vw, 28px) auto; }
+    .logo img{ width:min(780px, 90vw); height:auto; display:block; margin-inline:auto; filter: drop-shadow(0 10px 24px rgba(0,0,0,.25)); }
+
+    /* Address under logo */
+    .meta{ margin-top: clamp(4px, 1.6vw, 10px); font-weight:700; letter-spacing:.3px; font-size:clamp(13px, 2.4vw, 18px); color:#3a3a3a; text-shadow: 0 1px 2px rgba(255,255,255,.35), 0 1px 8px rgba(0,0,0,.28); }
+    .meta a{ color:inherit; text-decoration:none; }
+    .meta a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+    /* Mobile spacing when viewport is short */
+    @media (max-height: 600px){ .logo img{ width:min(600px, 86vw);} }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPY9E4PVX7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YPY9E4PVX7');
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YPY9E4PVX7');
   </script>
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://turfnsurfpoboy.com/">
-  <meta property="og:title" content="Turf N Surf Po Boy">
-  <meta property="og:description" content="Fresh po’ boys, tacos, and seafood in downtown Austin. Order online or visit us at 407 Lavaca St.">
-  <meta property="og:image" content="https://turfnsurfpoboy.com/assets/img/social-preview.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://turfnsurfpoboy.com/">
-  <meta name="twitter:title" content="Turf N Surf Po Boy">
-  <meta name="twitter:description" content="Fresh po’ boys, tacos, and seafood in downtown Austin.">
-  <meta name="twitter:image" content="https://turfnsurfpoboy.com/assets/img/social-preview.jpg">
 </head>
 <body>
   <div class="bg" aria-hidden="true"></div>
 
   <main class="wrap">
+    <nav class="cta" aria-label="primary">
+      <a class="menu" href="/assets/menu/turf-n-surf-menu.pdf" target="_blank" rel="noopener">Menu</a>
+      <a class="order" href="https://www.clover.com/online-ordering/turf-n-surf-po-boylavaca-austin" target="_blank" rel="noopener">Order Online</a>
+    </nav>
+
     <div class="logo">
       <picture>
-        <source srcset="assets/img/tns-tacos-logo.webp" type="image/webp">
-        <img src="assets/img/tns-tacos-logo.png" alt="Turf N Surf Po Boy" width="500" height="164" loading="eager">
+        <source srcset="assets/img/tns-logo.webp" type="image/webp">
+        <img src="assets/img/tns-logo.png" alt="Turf N Surf Po Boy" width="900" height="300" loading="eager">
       </picture>
     </div>
 
-    <nav class="cta" aria-label="primary">
-      <a href="assets/menu/2025-08-turf-n-surf-menu.pdf" target="_blank" rel="noopener">Menu</a>
-      <a href="https://www.clover.com/online-ordering/turf-n-surf-po-boylavaca-austin" target="_blank" rel="noopener">Order Online</a>
-    </nav>
-
     <p class="meta">
-      <a href="https://maps.app.goo.gl/npUMvHDrD2yMsLWm8" rel="noopener" target="_blank">407 Lavaca St, Austin, TX 78704</a>
+      <a href="https://maps.app.goo.gl/npUMvHDrD2yMsLWm8" target="_blank" rel="noopener">407 LAVACA ST, AUSTIN, TX 78704</a>
     </p>
   </main>
 </body>
 </html>
+
