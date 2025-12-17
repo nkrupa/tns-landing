@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catering — Turf N Surf Po Boy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-red:#d75c49;
+      --brand-blue:#2e6f7d;
+      --overlay:.12;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:grid;
+      place-items:center;
+      background:#000;
+      color:#1e1e1e;
+    }
+
+    /* Background */
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-image:url('../assets/img/tns-background.jpeg');
+      background-image:image-set(
+        url('../assets/img/tns-background.webp') type('image/webp') 1x,
+        url('../assets/img/tns-background.jpeg') type('image/jpeg') 1x
+      );
+    }
+    .bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(255,255,255,var(--overlay));
+    }
+
+    .wrap{
+      width:min(900px, 92vw);
+      text-align:center;
+      padding:clamp(20px, 5vw, 48px);
+    }
+
+    .logo img{
+      width:min(520px, 80vw);
+      height:auto;
+      margin-bottom:clamp(24px, 6vw, 48px);
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,.25));
+    }
+
+    h1{
+      font-family:'Bree Serif', Georgia, serif;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      font-size:clamp(28px, 6vw, 48px);
+      margin-bottom:24px;
+      color:#2b2b2b;
+      text-shadow:0 1px 2px rgba(255,255,255,.6);
+    }
+
+    .content{
+      font-family:'Bree Serif', Georgia, serif;
+      font-size:clamp(18px, 3.6vw, 26px);
+      line-height:1.5;
+      letter-spacing:.4px;
+      color:#2b2b2b;
+      text-shadow:0 1px 2px rgba(255,255,255,.6);
+    }
+
+    .content a{
+      color:var(--brand-blue);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .content a:hover{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .coming-soon{
+      margin-top:28px;
+      font-size:clamp(14px, 3vw, 18px);
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      color:#555;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPY9E4PVX7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YPY9E4PVX7');
+  </script>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <div class="logo">
+      <picture>
+        <source srcset="../assets/img/tns-logo.webp" type="image/webp">
+        <img src="../assets/img/tns-logo.png" alt="Turf N Surf Po Boy">
+      </picture>
+    </div>
+
+    <h1>Let Us Cater Your Next Event!</h1>
+
+    <div class="content">
+      <p>
+        Email
+        <a href="mailto:catering@turfnsurfpoboy.com">
+          catering@turfnsurfpoboy.com
+        </a>
+      </p>
+
+      <p>
+        Call or Text
+        <a href="tel:+15126632154">
+          512-663-2154
+        </a>
+      </p>
+    </div>
+
+    <div class="coming-soon">
+      Online Catering Ordering Coming Soon
+    </div>
+  </main>
+</body>
+</html>
