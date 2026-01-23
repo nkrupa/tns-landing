@@ -104,10 +104,39 @@
 
     .coming-soon{
       margin-top:28px;
-      font-size:clamp(14px, 3vw, 18px);
+      font-family:'Bree Serif', Georgia, serif;
+      font-size:clamp(16px, 3.2vw, 22px);
       text-transform:uppercase;
-      letter-spacing:1.2px;
-      color:#555;
+      letter-spacing:1.4px;
+      color:var(--brand-blue);
+    }
+
+    .order-button{
+      display:inline-block;
+      margin-top:6px;
+      padding:14px 36px;
+      border-radius:999px;
+      background:var(--brand-blue);
+      color:#fff;
+      font-family:'Bree Serif', Georgia, serif;
+      font-size:clamp(16px, 3.4vw, 22px);
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.25);
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+    }
+
+    .order-button:hover{
+      background:#255e6a;
+      transform:translateY(-1px);
+      box-shadow:0 12px 26px rgba(0,0,0,.22);
     }
   </style>
 
@@ -149,9 +178,14 @@
           </a>
         </p>
       </div>
-
       <div class="coming-soon">
-        Online Catering Ordering Coming Soon
+        --OR--<br>
+        <a
+          class="order-button"
+          href="https://caterbaby.com/r/turfnsurf?ref=tns-catering"
+        >
+          ORDER NOW
+        </a>
       </div>
     </div>
   </main>
